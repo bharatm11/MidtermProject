@@ -21,7 +21,7 @@ TEST(pclIoTest, loadPCDfileMustFail) {
 TEST(pclIoTest, loadPCDfileShowResult) {
   pclIo pclLoad;
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
-  int load = pclLoad.readPCDfile("pclIo_test.pcd");
+  int load = pclLoad.readPCDfile("../pclIo_test.pcd");
   pclLoad.getPointCloud(*cloud);
   EXPECT_NEAR(10, cloud->points[0].x, 0.5);
   EXPECT_NEAR(20, cloud->points[0].y, 0.5);

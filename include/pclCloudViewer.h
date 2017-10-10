@@ -19,16 +19,10 @@ class pclCloudViewer {
  public:
   pclCloudViewer();
 
-  void dispaly(pcl::PointCloud<pcl::PointXYZ>::ConstPtr &cloud);
-  int user_data;
+  void dispaly(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr &cloud);
 
  private:
-
-  void viewerOneOff(pcl::visualization::PCLVisualizer& viewer);
-
-
-  void viewerPsycho(pcl::visualization::PCLVisualizer& viewer);
-
+  int user_data;
 };
 
 
