@@ -8,40 +8,24 @@ using namespace pcl::io;
 #include "pclCloudViewer.h"
 #include <pcl/visualization/cloud_viewer.h>
 #include "pclIo.h"
+#include "pclVoxel.h"
 
-//int user_data;
-/*
-void viewerOneOff(pcl::visualization::PCLVisualizer& viewer) {
-  viewer.setBackgroundColor(0.0, 0.0, 0.0);
-  pcl::PointXYZ o;
-  o.x = 1.0;
-  o.y = 0;
-  o.z = 0;
-  viewer.addSphere(o, 0.25, "sphere", 0);
-  std::cout << "i only run once" << std::endl;
-
-}
-
-void viewerPsycho(pcl::visualization::PCLVisualizer& viewer) {
-  static unsigned count = 0;
-  std::stringstream ss;
-  ss << "Once per viewer loop: " << count++;
-  viewer.removeShape("text", 0);
-  viewer.addText(ss.str(), 200, 300, "text", 0);
-
-  //FIXME: possible race condition here:
-  user_data++;
-}
- */
 
 int main()
 {
+
   pclIo pclLoad;
   pclCloudViewer pclView;
+  pclVoxel pclvoxel;
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out(
+      new pcl::PointCloud<pcl::PointXYZ>);
   int load = pclLoad.readPCDfile("PCL_Matlab_Result__ROI_Smoothing_ascii.pcd");
   pclLoad.getPointCloud(*cloud);
-  pclView.dispaly(cloud);
+  pclvoxel.setLeafSize(0.1, 0.1, 0.1);
+  pclvoxel.setInputCloud(*cloud);
+  pclvoxel.filterProcess(*cloud_out);
+  pclView.dispaly(cloud_out);
   /*  pcl::visualization::CloudViewer viewer("Cloud Viewer");
 
   //blocks until the cloud is actually rendered

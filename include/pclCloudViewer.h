@@ -8,7 +8,7 @@
 #ifndef INCLUDE_PCLCLOUDVIEWER_H_
 #define INCLUDE_PCLCLOUDVIEWER_H_
 
-#include <pcl/visualization/cloud_viewer.h>//           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#include <pcl/visualization/cloud_viewer.h>
 #include <iostream>
 #include <pcl/io/io.h>
 #include <pcl/io/pcd_io.h>
