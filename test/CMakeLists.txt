@@ -7,10 +7,12 @@ add_executable(
     pclCloudViewerTest.cpp
     pclVoxelTest.cpp
     pclPassThroughTest.cpp
+    pclStatisticalOutlierRemovalTest.cpp
     ../app/pclIo.cpp
     ../app/pclCloudViewer.cpp
     ../app/pclVoxel.cpp
     ../app/pclPassThrough.cpp
+    ../app/pclStatisticalOutlierRemoval.cpp
 )
 
 find_package(PCL 1.2 REQUIRED)

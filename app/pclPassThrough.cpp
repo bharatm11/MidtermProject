@@ -24,12 +24,12 @@ pclPassThrough::pclPassThrough() {
   xMax = 0;
 
 }
-void pclPassThrough::setInputCloud(PointCloud<PointXYZ>& cloud_in) {
-  cloud = cloud_in;
+void pclPassThrough::setInputCloud(PointCloud<PointXYZ>& cloudIn) {
+  cloud = cloudIn;
 }
-void pclPassThrough::getInputCloud(PointCloud<PointXYZ>& cloud_out)
+void pclPassThrough::getInputCloud(PointCloud<PointXYZ>& cloudOut)
 {
-  cloud_out = cloud;
+  cloudOut = cloud;
 }
 
 
@@ -60,11 +60,11 @@ void pclPassThrough::setFilterZlimit(const float& setZMin,
   pass.setFilterLimits(zMin, zMax);
 
 }
-void pclPassThrough::filterProcess(PointCloud<PointXYZ>& cloud_out)
+void pclPassThrough::filterProcess(PointCloud<PointXYZ>& cloudOut)
 {
   cloudPtr = cloud.makeShared();
   pass.setInputCloud(cloudPtr);
-  pass.filter(cloud_out);
+  pass.filter(cloudOut);
 
 }
 

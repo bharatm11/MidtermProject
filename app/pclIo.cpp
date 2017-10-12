@@ -15,8 +15,8 @@ pclIo::pclIo() {
 
 }
 
-int pclIo::readPCDfile(const std::string& file_name) {
-  if (pcl::io::loadPCDFile<pcl::PointXYZ>(file_name, cloud) == -1)
+int pclIo::readPCDfile(const std::string& fileName) {
+  if (pcl::io::loadPCDFile<pcl::PointXYZ>(fileName, cloud) == -1)
       {
     PCL_ERROR("Couldn't read file test_pcd.pcd \n");
     return (-1);
@@ -24,6 +24,6 @@ int pclIo::readPCDfile(const std::string& file_name) {
   return 0;
 }
 
-void pclIo::getPointCloud(PointCloud<PointXYZ>& cloud_out) {
-  cloud_out = cloud;
+void pclIo::getPointCloud(PointCloud<PointXYZ>& cloudOut) {
+  cloudOut = cloud;
 }

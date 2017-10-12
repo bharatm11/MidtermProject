@@ -30,9 +30,9 @@ class pclVoxel {
 
   vector<float> getLeafSize();
 
-  void setInputCloud(PointCloud<PointXYZ>& cloud_in);
-  void getInputCloud(PointCloud<PointXYZ>& cloud_out);
-  void filterProcess(PointCloud<PointXYZ>& cloud_out);
+  void setInputCloud(PointCloud<PointXYZ>& cloudIn);
+  void getInputCloud(PointCloud<PointXYZ>& cloudOut);
+  void filterProcess(PointCloud<PointXYZ>& cloudOut);
 
 };
 

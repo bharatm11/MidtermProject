@@ -15,18 +15,18 @@ using std::vector;
 using namespace pcl;
 
 
-void pclVoxel::filterProcess(PointCloud<PointXYZ>& cloud_out) {
+void pclVoxel::filterProcess(PointCloud<PointXYZ>& cloudOut) {
 
   pcl::VoxelGrid<pcl::PointXYZ> sor;
   cloudPtr = cloud.makeShared();  //!!!!! Nice work!!!
   sor.setInputCloud(cloudPtr);
   sor.setLeafSize(lx, ly, lz);
-  sor.filter(cloud_out);
+  sor.filter(cloudOut);
 
 }
 
-void pclVoxel::getInputCloud(PointCloud<PointXYZ>& cloud_out) {
-  cloud_out = cloud;
+void pclVoxel::getInputCloud(PointCloud<PointXYZ>& cloudOut) {
+  cloudOut = cloud;
 }
 
 vector<float> pclVoxel::getLeafSize() {
@@ -43,8 +43,8 @@ pclVoxel::pclVoxel() {
   lz = 0;
 }
 
-void pclVoxel::setInputCloud(PointCloud<PointXYZ>& cloud_in) {
-  cloud = cloud_in;
+void pclVoxel::setInputCloud(PointCloud<PointXYZ>& cloudIn) {
+  cloud = cloudIn;
 }
 
 void pclVoxel::setLeafSize(float setLx, float setLy, float setLz) {

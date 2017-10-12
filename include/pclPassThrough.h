@@ -32,12 +32,12 @@ class pclPassThrough {
   double xMax;
  public:
   pclPassThrough();
-  void setInputCloud(PointCloud<PointXYZ>& cloud_in);
-  void getInputCloud(PointCloud<PointXYZ>& cloud_out);
+  void setInputCloud(PointCloud<PointXYZ>& cloudIn);
+  void getInputCloud(PointCloud<PointXYZ>& cloudOut);
+  void filterProcess(PointCloud<PointXYZ>& cloudOut);
   void setFilterXlimit(const float& setXMin, const float& setXMax);
   void setFilterYlimit(const float& setYMin, const float& setYMax);
   void setFilterZlimit(const float& setZMin, const float& setZMax);
-  void filterProcess(PointCloud<PointXYZ>& cloud_out);
   vector<float> getFilterLimit();
 };
 

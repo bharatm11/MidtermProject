@@ -11,14 +11,6 @@
 #include <pcl/point_types.h>
 #include "pclCloudViewer.h"
 
-
-#ifndef TEST
-#define FOREVER()1
-#else
-#define FOREVER()0
-#endif
-
-
 pclCloudViewer::pclCloudViewer()
 {
   user_data = 0;
@@ -33,7 +25,7 @@ void pclCloudViewer::dispaly(
 
   do {
     user_data++;
-  } while (!viewer.wasStopped() && FOREVER());
+  } while (!viewer.wasStopped());
 
 }
 

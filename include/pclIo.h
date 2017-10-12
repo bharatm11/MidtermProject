@@ -20,9 +20,9 @@ class pclIo {
 
   pclIo();
 
-  int readPCDfile(const std::string& file_name);
+  int readPCDfile(const std::string& fileName);
 
-  void getPointCloud(PointCloud<PointXYZ>& cloud_out);
+  void getPointCloud(PointCloud<PointXYZ>& cloudOut);
 
  private:
   PointCloud<PointXYZ> cloud;
