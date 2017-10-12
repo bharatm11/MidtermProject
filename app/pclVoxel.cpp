@@ -18,8 +18,7 @@ using namespace pcl;
 void pclVoxel::filterProcess(PointCloud<PointXYZ>& cloud_out) {
 
   pcl::VoxelGrid<pcl::PointXYZ> sor;
-  pcl::PointCloud<pcl::PointXYZ>::Ptr cloudPtr(
-      new pcl::PointCloud<pcl::PointXYZ>);
+  cloudPtr = cloud.makeShared();  //!!!!! Nice work!!!
   sor.setInputCloud(cloudPtr);
   sor.setLeafSize(lx, ly, lz);
   sor.filter(cloud_out);

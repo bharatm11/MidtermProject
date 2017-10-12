@@ -20,9 +20,11 @@ int main()
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out(
       new pcl::PointCloud<pcl::PointXYZ>);
-  int load = pclLoad.readPCDfile("PCL_Matlab_Result__ROI_Smoothing_ascii.pcd");
+  pclLoad.readPCDfile("PCL_Matlab_Result__ROI_Smoothing_ascii.pcd");
+  /* pclLoad.getPointCloud(*cloud_out);
+   pclView.dispaly(cloud_out);*/
   pclLoad.getPointCloud(*cloud);
-  pclvoxel.setLeafSize(0.1, 0.1, 0.1);
+  pclvoxel.setLeafSize(0.5, 0.5, 0.5);
   pclvoxel.setInputCloud(*cloud);
   pclvoxel.filterProcess(*cloud_out);
   pclView.dispaly(cloud_out);
