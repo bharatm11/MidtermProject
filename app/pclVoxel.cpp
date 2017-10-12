@@ -32,8 +32,8 @@ void pclVoxel::getInputCloud(PointCloud<PointXYZ>& cloud_out) {
 vector<float> pclVoxel::getLeafSize() {
   vector<float> leafvalue(3);
   leafvalue[0] = lx;
-  leafvalue[0] = ly;
-  leafvalue[0] = lz;
+  leafvalue[1] = ly;
+  leafvalue[2] = lz;
   return leafvalue;
 }
 

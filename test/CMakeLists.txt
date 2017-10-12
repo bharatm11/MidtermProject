@@ -5,8 +5,10 @@ add_executable(
     main.cpp
     pclIoTest.cpp
     pclCloudViewerTest.cpp
+    pclVoxelTest.cpp
     ../app/pclIo.cpp
     ../app/pclCloudViewer.cpp
+    ../app/pclVoxel.cpp
 )
 
 find_package(PCL 1.2 REQUIRED)
