@@ -6,9 +6,11 @@ add_executable(
     pclIoTest.cpp
     pclCloudViewerTest.cpp
     pclVoxelTest.cpp
+    pclPassThroughTest.cpp
     ../app/pclIo.cpp
     ../app/pclCloudViewer.cpp
     ../app/pclVoxel.cpp
+    ../app/pclPassThrough.cpp
 )
 
 find_package(PCL 1.2 REQUIRED)

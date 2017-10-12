@@ -33,8 +33,8 @@ void pclPassThrough::getInputCloud(PointCloud<PointXYZ>& cloud_out)
 }
 
 
-void pclPassThrough::setFilterXlimit(const float& setXMax,
-                                     const float& setXMin)
+void pclPassThrough::setFilterXlimit(const float& setXMin,
+                                     const float& setXMax)
 {
   xMax = setXMax;
   xMin = setXMin;
@@ -42,8 +42,8 @@ void pclPassThrough::setFilterXlimit(const float& setXMax,
   pass.setFilterLimits(xMin, xMax);
 
 }
-void pclPassThrough::setFilterYlimit(const float& setYMax,
-                                     const float& setYMin)
+void pclPassThrough::setFilterYlimit(const float& setYMin,
+                                     const float& setYMax)
 {
   yMax = setYMax;
   yMin = setYMin;
@@ -51,8 +51,8 @@ void pclPassThrough::setFilterYlimit(const float& setYMax,
   pass.setFilterLimits(yMin, yMax);
 
 }
-void pclPassThrough::setFilterZlimit(const float& setZMax,
-                                     const float& setZMin)
+void pclPassThrough::setFilterZlimit(const float& setZMin,
+                                     const float& setZMax)
 {
   zMax = setZMax;
   zMin = setZMin;

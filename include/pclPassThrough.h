@@ -34,9 +34,9 @@ class pclPassThrough {
   pclPassThrough();
   void setInputCloud(PointCloud<PointXYZ>& cloud_in);
   void getInputCloud(PointCloud<PointXYZ>& cloud_out);
-  void setFilterXlimit(const float& setXMax, const float& setXMin);
-  void setFilterYlimit(const float& setYMax, const float& setYMin);
-  void setFilterZlimit(const float& setZMax, const float& setZMin);
+  void setFilterXlimit(const float& setXMin, const float& setXMax);
+  void setFilterYlimit(const float& setYMin, const float& setYMax);
+  void setFilterZlimit(const float& setZMin, const float& setZMax);
   void filterProcess(PointCloud<PointXYZ>& cloud_out);
   vector<float> getFilterLimit();
 };
