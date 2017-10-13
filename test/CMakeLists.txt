@@ -4,6 +4,8 @@ add_executable(
     cpp-test
     main.cpp
     pclIoTest.cpp
+    pclVoxelTest.cpp
+    ../app/pclVoxel.cpp
     ../app/pclIo.cpp
 )
 
