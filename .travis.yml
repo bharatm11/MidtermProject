@@ -14,15 +14,16 @@ matrix:
           sources:
             - ubuntu-toolchain-r-test
             - george-edison55-precise-backports
+            - v-launchpad-jochen-sprickerhof-de/pcl
           packages:
             - g++-5
             - cmake
             - cmake-data
+            - pcl-1.7
       env: COMPILER=g++-5
 
 before_install:
   - pip install --user cpp-coveralls
-  - sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
   - sudo apt-get install libpcl-1.7 -y
 
 
