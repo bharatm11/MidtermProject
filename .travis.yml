@@ -22,8 +22,8 @@ matrix:
 
 before_install:
   - pip install --user cpp-coveralls
-  - sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl
-  - sudo apt-get install pcl-1.7
+  - sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
+  - sudo apt-get install pcl-1.7 -y
 
 
 install:
