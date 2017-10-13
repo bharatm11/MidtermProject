@@ -10,7 +10,7 @@ option(COVERAGE "Generate Coverage Data" ON)
 if (COVERAGE)
     include(CodeCoverage)
     set(LCOV_REMOVE_EXTRA "'vendor/*'")
-    setup_target_for_coverage(code_coverage coverage test/pclIoTest.cpp)
+    setup_target_for_coverage(code_coverage test/cpp-test coverage)
     set(COVERAGE_SRCS app/main.cpp app/pclIo.cpp app/pclCloudViewer.cpp app/pclVoxel.cpp app/pclPassThrough.cpp app/pclStatisticalOutlierRemoval.cpp include/lib.hpp include/pclIo.h include/pclCloudViewer.h include/pclVoxel.h include/pclPassThrough.h include/pclStatisticalOutlierRemoval.h)
 
     SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
