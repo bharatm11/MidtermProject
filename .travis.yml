@@ -24,7 +24,6 @@ matrix:
 
 before_install:
   - pip install --user cpp-coveralls
-  - sudo apt-get install libpcl-1.7 -y
 
 
 install:
