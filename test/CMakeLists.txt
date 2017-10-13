@@ -4,7 +4,6 @@ add_executable(
     cpp-test
     main.cpp
     pclVoxelTest.cpp
-    ../app/pclVoxel.cpp
 )
 
 find_package(PCL 1.2 REQUIRED)
