@@ -3,7 +3,8 @@ set(GTEST_SHUFFLE 1)
 add_executable(
     cpp-test
     main.cpp
-    pclVoxelTest.cpp
+    pclPassThroughTest.cpp
+    ../app/pclPassThrough.cpp
 )
 
 find_package(PCL 1.2 REQUIRED)
