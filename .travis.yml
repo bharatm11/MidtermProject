@@ -22,9 +22,11 @@ matrix:
 
 before_install:
   - pip install --user cpp-coveralls
-  - sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
-  - sudo apt-get install libpcl-dev -y
+
 install:
+  - sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y;
+  - sudo apt-get update -y;
+  - sudo apt-get install libpcl1
   - sudo apt-get install -y -qq lcov
 script:
   - export CXX=$COMPILER;
