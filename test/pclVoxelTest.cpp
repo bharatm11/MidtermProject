@@ -8,22 +8,22 @@
 #include <iostream>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
-//#include "pclVoxel.h"
+#include "pclVoxel.h"
 #include "pclIo.h"
 
 TEST(pclVoxelTest, setLeafValue) {
-  /*pclVoxel pclVoxel;
+  pclVoxel pclVoxel;
   vector<float> leafSize(3);
   pclVoxel.setLeafSize(0.5, 0.4, 0.7);
   leafSize = pclVoxel.getLeafSize();
   EXPECT_NEAR(0.5, leafSize[0], 0.1);
   EXPECT_NEAR(0.4, leafSize[1], 0.1);
-   EXPECT_NEAR(0.7, leafSize[2], 0.1);*/
+  EXPECT_NEAR(0.7, leafSize[2], 0.1);
 }
 
 
 TEST(pclVoxelTest, pointCloudDownSampleing) {
-  /* pclIo pclLoad;
+  pclIo pclLoad;
   pclVoxel pclVoxel;
   int originSize = 0;
   int filteredSize = 0;
@@ -38,7 +38,6 @@ TEST(pclVoxelTest, pointCloudDownSampleing) {
   pclVoxel.setLeafSize(0.5, 0.4, 0.7);
   pclVoxel.filterProcess(*cloudFiltered);
   filteredSize = cloudFiltered->height * cloudFiltered->width;
-   EXPECT_LT(filteredSize, originSize);*/
-  EXPECT_EQ(0, 0);
+  EXPECT_LT(filteredSize, originSize);
 
 }

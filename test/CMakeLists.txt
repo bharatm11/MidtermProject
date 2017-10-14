@@ -4,7 +4,9 @@ add_executable(
     cpp-test
     main.cpp
     pclPassThroughTest.cpp
+    pclVoxelTest.cpp
     ../app/pclPassThrough.cpp
+    ../app/pclVoxel.cpp
 )
 
 find_package(PCL 1.2 REQUIRED)
