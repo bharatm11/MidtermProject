@@ -23,6 +23,7 @@ matrix:
             - cmake
             - cmake-data
             - libpcl-1.7-all-dev
+            - libgtest-dev
 
       env: COMPILER=g++-5
 
