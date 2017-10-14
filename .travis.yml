@@ -22,18 +22,7 @@ matrix:
             - g++-5
             - cmake
             - cmake-data
-            - pcl-1.7
-            - libqhull-dev
-            - libvtk5-dev
-            - libflann-dev
-            - libeigen3-dev
-            - libboost1.55-all-dev
-            - libopenni-dev
-            - dvipng
-            - libqt4-dev
-            - libqt4-opengl-dev
-            - libvtk5-qt4-dev
-            - libglew-dev
+            - libpcl-1.7-all-dev
 
       env: COMPILER=g++-5
 
