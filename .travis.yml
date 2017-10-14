@@ -12,6 +12,9 @@ matrix:
       addons:
         apt:
           sources:
+            - kalakris-cmake
+            - boost-latest
+            - kubuntu-backports
             - ubuntu-toolchain-r-test
             - george-edison55-precise-backports
             - sourceline: 'ppa:v-launchpad-jochen-sprickerhof-de/pcl'
@@ -24,6 +27,15 @@ matrix:
             - libvtk5-dev
             - libflann-dev
             - libeigen3-dev
+            - libboost1.55-all-dev
+            - libgtest-dev
+            - dvipng
+            - libusb-1.0-0-dev
+            - libqt4-dev
+            - libqt4-opengl-dev
+            - libvtk5-qt4-dev
+            - libglew-dev
+            - libopenni-dev
       env: COMPILER=g++-5
 
 before_install:
