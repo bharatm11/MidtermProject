@@ -22,7 +22,7 @@ matrix:
             - g++-5
             - cmake
             - cmake-data
-            - pcl-1.7
+            - libpcl-dev
             - libqhull-dev
             - libvtk5-dev
             - libflann-dev
