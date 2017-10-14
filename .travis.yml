@@ -22,7 +22,6 @@ matrix:
             - g++-5
             - cmake
             - cmake-data
-            - libpcl-dev
             - libqhull-dev
             - libvtk5-dev
             - libflann-dev
