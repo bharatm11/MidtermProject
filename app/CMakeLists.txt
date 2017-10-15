@@ -8,5 +8,13 @@ include_directories(${PCL_INCLUDE_DIRS})
 
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
-add_executable(shell-app main.cpp pclIo.cpp pclCloudViewer.cpp pclVoxel.cpp pclPassThrough.cpp pclStatisticalOutlierRemoval.cpp)
+add_executable(
+     shell-app 
+     main.cpp 
+     pclIo.cpp 
+     pclCloudViewer.cpp 
+     pclVoxel.cpp 
+     pclPassThrough.cpp 
+     pclStatisticalOutlierRemoval.cpp 
+     pclMlsSmoothing.cpp)
 target_link_libraries (shell-app ${PCL_LIBRARIES})

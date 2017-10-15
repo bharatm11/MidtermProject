@@ -7,10 +7,12 @@ add_executable(
     pclPassThroughTest.cpp
     pclVoxelTest.cpp
     pclStatisticalOutlierRemovalTest.cpp
+    pclMlsSmoothingTest.cpp
     ../app/pclPassThrough.cpp
     ../app/pclVoxel.cpp
     ../app/pclIo.cpp
     ../app/pclStatisticalOutlierRemoval.cpp
+    ../app/pclMlsSmoothing.cpp
 )
 
 find_package(PCL 1.2 REQUIRED)
