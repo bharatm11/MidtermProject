@@ -14,6 +14,7 @@
 #include <pcl/features/normal_3d.h>
 #include <pcl/surface/gp3.h>
 #include <pclFastTriangular.h>
+#include <vector>
 using namespace pcl;
 
 pclFastTriangular::pclFastTriangular() {
@@ -42,9 +43,6 @@ void pclFastTriangular::reconctruct(pcl::PolygonMesh& triangles)
   cloudPtr = cloud.makeShared();
   tree->setInputCloud(cloudPtr);
 
-  // Initialize objects
-  pcl::GreedyProjectionTriangulation<pcl::PointNormal> gp3;
-
   // Set the maximum distance between connected points (maximum edge length)
   gp3.setSearchRadius(searchRadius);
 
@@ -61,9 +59,13 @@ void pclFastTriangular::reconctruct(pcl::PolygonMesh& triangles)
   gp3.setSearchMethod(tree);
   gp3.reconstruct(triangles);
 
-
-
 }
+
+std::vector<int> pclFastTriangular::getSegID() {
+  return gp3.getPartIDs();
+}
+
+
 
 
 
