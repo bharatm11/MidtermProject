@@ -16,5 +16,6 @@ add_executable(
      pclVoxel.cpp 
      pclPassThrough.cpp 
      pclStatisticalOutlierRemoval.cpp 
-     pclMlsSmoothing.cpp)
+     pclMlsSmoothing.cpp
+     pclFastTriangular.cpp)
 target_link_libraries (shell-app ${PCL_LIBRARIES})

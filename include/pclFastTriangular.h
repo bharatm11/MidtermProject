@@ -1,0 +1,38 @@
+/*
+ * pclFastTriangular.h
+ *
+ *  Created on: Oct 16, 2017
+ *      Author: viki
+ */
+
+#ifndef INCLUDE_PCLFASTTRIANGULAR_H_
+#define INCLUDE_PCLFASTTRIANGULAR_H_
+#include <iostream>
+#include <pcl/io/io.h>
+#include <pcl/io/pcd_io.h>
+#include <pcl/point_types.h>
+#include <pcl/kdtree/kdtree_flann.h>
+#include <pcl/surface/mls.h>
+#include <vector>
+#include <ios>
+using namespace pcl;
+
+class pclFastTriangular {
+
+ private:
+  PointCloud<PointNormal> cloud;
+  pcl::PointCloud<pcl::PointNormal>::Ptr cloudPtr;
+  double searchRadius;
+
+ public:
+  pclFastTriangular();
+  void setSearchRadius(double radius);
+  double getSearchRadius();
+  void setInputCloud(PointCloud<PointNormal>& cloudIn);
+  void getInputCloud(PointCloud<PointNormal>& cloudOut);
+  void reconctruct(pcl::PolygonMesh& triangles);
+
+};
+
+
+#endif /* INCLUDE_PCLFASTTRIANGULAR_H_ */
