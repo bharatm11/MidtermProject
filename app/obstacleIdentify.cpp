@@ -35,7 +35,7 @@ void obstacleIdentify::getInputCloud(
 void obstacleIdentify::process(pcl::PointCloud<pcl::PointNormal>& cloudOut) {
   for (size_t i = 0; i < cloud.points.size(); ++i) {
     // obstacle
-    if (cloud.points[i].normal_z < normalZ) {  // mark as obstacle
+    if (cloud.points[i].normal_z > normalZ) {  // mark as obstacle
       cloudOut.push_back(cloud.points[i]);
     }
   }

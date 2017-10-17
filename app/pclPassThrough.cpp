@@ -19,12 +19,12 @@
 using std::vector;
 
 pclPassThrough::pclPassThrough() {
-  zMin = 0;
-  zMax = 0;
-  yMin = 0;
-  yMax = 0;
-  xMin = 0;
-  xMax = 0;
+  zMin = -5000;
+  zMax = 5000;
+  yMin = -5000;
+  yMax = 5000;
+  xMin = -5000;
+  xMax = 5000;
 }
 void pclPassThrough::setInputCloud(pcl::PointCloud<pcl::PointXYZ>& cloudIn) {
   cloud = cloudIn;
