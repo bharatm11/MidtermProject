@@ -23,7 +23,6 @@ class pclFastTriangular {
  private:
   PointCloud<PointNormal> cloud;
   pcl::PointCloud<pcl::PointNormal>::Ptr cloudPtr;
-  //std::vector<std::vector<size_t> > vertices;
   pcl::GreedyProjectionTriangulation<pcl::PointNormal> gp3;
   double searchRadius;
 

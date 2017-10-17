@@ -14,20 +14,21 @@ using namespace pcl::io;
 int main()
 {
 
+
   pclIo pclLoad;
   pclCloudViewer pclView;
   pclVoxel pclvoxel;
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out(
       new pcl::PointCloud<pcl::PointXYZ>);
-  pclLoad.readPCDfile("../PCL_Matlab_Result__ROI_Smoothing_ascii.pcd");
-  /* pclLoad.getPointCloud(*cloud_out);
-   pclView.dispaly(cloud_out);*/
-  pclLoad.getPointCloud(*cloud);
+  //load pcd file using
+  pclLoad.readPCDfile("../PCL_Test.pcd");
+  pclView.dispaly(cloud);
+  /*pclLoad.getPointCloud(*cloud);
   pclvoxel.setLeafSize(0.5, 0.5, 0.5);
   pclvoxel.setInputCloud(*cloud);
   pclvoxel.filterProcess(*cloud_out);
-  pclView.dispaly(cloud_out);
+   pclView.dispaly(cloud);*/
   /*  pcl::visualization::CloudViewer viewer("Cloud Viewer");
 
   //blocks until the cloud is actually rendered

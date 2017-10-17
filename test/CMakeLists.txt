@@ -9,12 +9,14 @@ add_executable(
     pclStatisticalOutlierRemovalTest.cpp
     pclMlsSmoothingTest.cpp
     pclFastTriangularTest.cpp
+    obstacleIdentifyTest.cpp
     ../app/pclPassThrough.cpp
     ../app/pclVoxel.cpp
     ../app/pclIo.cpp
     ../app/pclStatisticalOutlierRemoval.cpp
     ../app/pclMlsSmoothing.cpp
     ../app/pclFastTriangular.cpp
+    ../app/obstacleIdentify.cpp
 )
 
 find_package(PCL 1.2 REQUIRED)

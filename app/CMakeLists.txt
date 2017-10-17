@@ -17,5 +17,6 @@ add_executable(
      pclPassThrough.cpp 
      pclStatisticalOutlierRemoval.cpp 
      pclMlsSmoothing.cpp
-     pclFastTriangular.cpp)
+     pclFastTriangular.cpp
+     obstacleIdentify.cpp)
 target_link_libraries (shell-app ${PCL_LIBRARIES})
