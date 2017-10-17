@@ -78,5 +78,5 @@ TEST(obstacleIdentifyTest, process) {
   oi.setNormalZ(0.8);
   oi.process(*cloudOut);
   double normalZ = cloudOut->points[0].normal_z;
-  EXPECT_NEAR(0.7, normalZ, 0.05);
+  EXPECT_NEAR(1, normalZ, 0.05);
 }

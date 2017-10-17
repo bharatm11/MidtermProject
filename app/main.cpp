@@ -66,14 +66,15 @@ int main() {
   ft.setSearchRadius(0.05);
   ft.reconctruct(triangles);
   // 8. Show the result
-  boost::shared_ptr<pcl::visualization::PCLVisualizer> gp3viewer(
-      new pcl::visualization::PCLVisualizer("3D Viewer"));
-  gp3viewer->setBackgroundColor(0, 0, 0);
-  gp3viewer->addPolygonMesh(triangles, "meshes", 0);
-  gp3viewer->addCoordinateSystem(1.0);
-  while (!gp3viewer->wasStopped()) {
-    gp3viewer->spinOnce(100);
-  }
+  pclView.display(triangles);
+  /*
+   pcl::visualization::CloudViewer viewer("Cloud Viewer");
+   viewer.showCloud(cloud_out);
+   int user_data=0;
+   do {
+   user_data++;
+   } while (!viewer.wasStopped());
+   */
 
   return 0;
 }

@@ -34,7 +34,7 @@ class pclCloudViewer {
   /**@brief display point cloud
    * @param[in] cloud reference of a point cloud
    * @return none */
-  void dispaly(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr &cloud);
+  void display(const pcl::PolygonMesh &triangles);
 };
 
 #endif  // INCLUDE_PCLCLOUDVIEWER_H_
