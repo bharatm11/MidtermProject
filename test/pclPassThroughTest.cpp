@@ -1,19 +1,29 @@
-/*
- * pclPassThroughTest.cpp
+// "Copyright [2017] <Michael Kam>"
+/** @file pclPassThroughTest.cpp
+ *  @brief pclPassThroughTest.cpp consists of 2 unit test cases that test the
+ *  pclPassThrough class.
+ **
+ *  TEST(pclPassThroughTest, setLimitValue) will test the setFilterXlimit() ,setFilterYlimit,
+ *  setFilterZlimit(), and getFilterLimit() method.
+ *  TEST(pclPassThroughTest, PassThroughFiltered) will test the filterProcess() method.
  *
- *  Created on: Oct 12, 2017
- *      Author: viki
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
+ *  @copyright GNU Public License.
  */
+#include "pclIo.h"
+#include "pclPassThrough.h"
 #include <gtest/gtest.h>
-#include <iostream>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
 #include <vector>
-#include "pclPassThrough.h"
-#include "pclIo.h"
-using std::vector;
-using namespace pcl;
+#include <iostream>
 
+using std::vector;
+// using namespace pcl;
+/**@brief TEST(pclPassThroughTest, setLimitValue) will
+ * test the setFilterXlimit() ,setFilterYlimit, setFilterZlimit(),
+ * and getFilterLimit() method.*/
 TEST(pclPassThroughTest, setLimitValue) {
   pclPassThrough pclpt;
   vector<float> passLimit(6);
@@ -28,7 +38,8 @@ TEST(pclPassThroughTest, setLimitValue) {
   EXPECT_NEAR(15.1, passLimit[4], 0.1);
   EXPECT_NEAR(20.3, passLimit[5], 0.1);
 }
-
+/**@brief TEST(pclPassThroughTest, PassThroughFiltered) will
+ * test the filterProcess() method.*/
 TEST(pclPassThroughTest, PassThroughFiltered) {
   pclPassThrough pclpt;
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
@@ -37,7 +48,7 @@ TEST(pclPassThroughTest, PassThroughFiltered) {
   cloud->width = 5;
   cloud->height = 1;
   cloud->points.resize(cloud->width * cloud->height);
-  //define five point cloud
+  // define five point cloud
   cloud->points[0].x = 3;
   cloud->points[0].y = 3;
   cloud->points[0].z = -1.2;
@@ -58,7 +69,6 @@ TEST(pclPassThroughTest, PassThroughFiltered) {
   pclpt.filterProcess(*cloudFiltered);
   int sizeFiltered = cloudFiltered->height * cloudFiltered->width;
   EXPECT_EQ(2, sizeFiltered);
-
 }
 
 

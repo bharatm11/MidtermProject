@@ -1,12 +1,12 @@
-/*
- * obstacleIdentify.cpp
+// "Copyright [2017] <Michael Kam>"
+/** @file obstacleIdentify.cpp
+ *  @brief This is the implementation of the obstacleIdentify class. This class consists of 7 methods.
+ *  Please refer the obstacleIdentify.h for more detail.
  *
- *  Created on: Oct 16, 2017
- *      Author: Michael
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
  */
 #include <obstacleIdentify.h>
-
-
 
   obstacleIdentify::obstacleIdentify() {
   normalZ = 0;
@@ -14,7 +14,6 @@
 }
 void obstacleIdentify::setNormalZ(double zNormal) {
   normalZ = zNormal;
-
 }
 double obstacleIdentify::getNormalZ() {
   return normalZ;
@@ -25,15 +24,15 @@ void obstacleIdentify::setZHeight(double height) {
 double obstacleIdentify::getZHeight() {
   return zHeight;
 }
-void obstacleIdentify::setInputCloud(PointCloud<PointNormal>& cloudIn) {
+void obstacleIdentify::setInputCloud(
+    pcl::PointCloud<pcl::PointNormal>& cloudIn) {
   cloud = cloudIn;
 }
-void obstacleIdentify::getInputCloud(PointCloud<PointNormal>& cloudOut) {
+void obstacleIdentify::getInputCloud(
+    pcl::PointCloud<pcl::PointNormal>& cloudOut) {
   cloudOut = cloud;
 }
-void obstacleIdentify::process(PointCloud<PointNormal>& cloudOut) {
-
-
+void obstacleIdentify::process(pcl::PointCloud<pcl::PointNormal>& cloudOut) {
   for (size_t i = 0; i < cloud.points.size(); ++i) {
     // obstacle
     if (cloud.points[i].normal_z < normalZ) {  // mark as obstacle

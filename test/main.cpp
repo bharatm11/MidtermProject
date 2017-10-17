@@ -1,3 +1,13 @@
+// "Copyright [2017] <Michael Kam>"
+/** @file main.cpp
+ *  @brief main test file of this project.
+ **
+ *  The cpp-test start entering this file.
+ *
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
+ *  @copyright GNU Public License.
+ */
 #include <gtest/gtest.h>
 
 int main(int argc, char** argv) {

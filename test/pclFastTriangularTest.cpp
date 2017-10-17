@@ -1,13 +1,22 @@
-/*
- * pclFastTriangularTest.cpp
+// "Copyright [2017] <Michael Kam>"
+/** @file pclFastTriangularTest.cpp
+ *  @brief pclFastTriangularTest.cpp consists of 3 unit test cases that test the
+ *  pclFastTriangular class.
+ **
+ *  TEST(pclFastTriangularTest, setRadius) will test the setSearchRadius() and getSearchRadius() method.
+ *  TEST(pclFastTriangularTest, setpclCloud) will test the setInputCloud() and getInputCloud() method.
+ *  TEST(pclFastTriangularTest, TriangularMesh) will test the reconctruct() method.
  *
- *  Created on: Oct 16, 2017
- *      Author: viki
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
+ *  @copyright GNU Public License.
  */
 #include <gtest/gtest.h>
 #include <pclFastTriangular.h>
 #include <pclMlsSmoothing.h>
-
+#include <vector>
+/**@brief TEST(pclFastTriangularTest, setRadius) will
+ * test the setSearchRadius() and getSearchRadius() method*/
 TEST(pclFastTriangularTest, setRadius) {
   pclFastTriangular ft;
   double radiusOut;
@@ -15,7 +24,8 @@ TEST(pclFastTriangularTest, setRadius) {
   radiusOut = ft.getSearchRadius();
   EXPECT_NEAR(20.32, radiusOut, 0.1);
 }
-
+/**@brief TEST(pclFastTriangularTest, setpclCloud) will test
+ * the setInputCloud() and getInputCloud() method*/
 TEST(pclFastTriangularTest, setpclCloud) {
   pclFastTriangular ft;
   pcl::PointCloud<pcl::PointNormal>::Ptr cloud(
@@ -25,7 +35,7 @@ TEST(pclFastTriangularTest, setpclCloud) {
   cloud->width = 2;
   cloud->height = 1;
   cloud->points.resize(cloud->width * cloud->height);
-  //define point cloud
+  // define point cloud
   cloud->points[0].x = 3;
   cloud->points[0].y = 0.2;
   cloud->points[0].z = -1.2;
@@ -38,8 +48,9 @@ TEST(pclFastTriangularTest, setpclCloud) {
   int getInputSize = cloudFiltered->width * cloudFiltered->height;
   EXPECT_EQ(originSize, getInputSize);
   EXPECT_NEAR(-1.2, cloudFiltered->points[0].z, 0.1);
-
 }
+/**@brief TEST(pclFastTriangularTest, TriangularMesh) will
+ * test the reconctruct() method*/
 TEST(pclFastTriangularTest, TriangularMesh) {
   pclFastTriangular ft;
   pclMlsSmoothing mlsing;
@@ -50,7 +61,7 @@ TEST(pclFastTriangularTest, TriangularMesh) {
   cloud->width = 3;
   cloud->height = 1;
   cloud->points.resize(cloud->width * cloud->height);
-  //define point cloud
+  // define point cloud
   cloud->points[0].x = 3;
   cloud->points[0].y = 0;
   cloud->points[0].z = 0;
@@ -72,11 +83,10 @@ TEST(pclFastTriangularTest, TriangularMesh) {
   ft.reconctruct(triangles);
   std::vector<int> segID;
   segID = ft.getSegID();
-  //std::cout << segID[0] << std::endl;
-  //std::cout << segID[1] << std::endl;
-  //std::cout << segID[2] << std::endl;
+  // std::cout << segID[0] << std::endl;
+  // std::cout << segID[1] << std::endl;
+  // std::cout << segID[2] << std::endl;
   ASSERT_NEAR(0, segID[0], 0.1);
   ASSERT_NEAR(0, segID[1], 0.1);
   ASSERT_NEAR(0, segID[2], 0.1);
-
 }

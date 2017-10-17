@@ -1,52 +1,32 @@
-#include <iostream>
-#include <lib.hpp>
+// "Copyright [2017] <Michael Kam>"
+/** @file main.cpp
+ *  @brief main file of this project
+ **
+ *  The shell-app start from this file.
+ *
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
+ */
+#include "pclIo.h"
+#include "pclVoxel.h"
 #include <pcl/io/io.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
-using namespace pcl::io;
 #include <pcl/filters/statistical_outlier_removal.h>
 #include "pclCloudViewer.h"
 #include <pcl/visualization/cloud_viewer.h>
-#include "pclIo.h"
-#include "pclVoxel.h"
+#include <iostream>
+// using namespace pcl::io;
 
-
-int main()
-{
-
-
+int main() {
   pclIo pclLoad;
   pclCloudViewer pclView;
   pclVoxel pclvoxel;
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out(
       new pcl::PointCloud<pcl::PointXYZ>);
-  //load pcd file using
+  // load pcd file using
   pclLoad.readPCDfile("../PCL_Test.pcd");
   pclView.dispaly(cloud);
-  /*pclLoad.getPointCloud(*cloud);
-  pclvoxel.setLeafSize(0.5, 0.5, 0.5);
-  pclvoxel.setInputCloud(*cloud);
-  pclvoxel.filterProcess(*cloud_out);
-   pclView.dispaly(cloud);*/
-  /*  pcl::visualization::CloudViewer viewer("Cloud Viewer");
-
-  //blocks until the cloud is actually rendered
-  viewer.showCloud(cloud);
-
-  //use the following functions to get access to the underlying more advanced/powerful
-  //PCLVisualizer
-
-  //This will only get called once
-  viewer.runOnVisualizationThreadOnce(viewerOneOff);
-
-  //This will get called once per visualization iteration
-  viewer.runOnVisualizationThread(viewerPsycho);
-  while (!viewer.wasStopped()) {
-    //you can also do cool processing here
-    //FIXME: Note that this is running in a separate thread from viewerPsycho
-    //and you should guard against race conditions yourself...
-    user_data++;
-   }*/
   return 0;
 }

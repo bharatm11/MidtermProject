@@ -1,22 +1,32 @@
-/*
- * pclMlsSmoothingTest.cpp
+// "Copyright [2017] <Michael Kam>"
+/** @file pclMlsSmoothingTest.cpp
+ *  @brief pclMlsSmoothingTest.cpp consists of 3 unit test cases that test the
+ *  pclMlsSmoothing class.
+ **
+ *  TEST(pclMlsSmoothingTest, setRadius) will test the setSearchRadius() and getSearchRadius() method.
+ *  TEST(pclMlsSmoothingTest, setpclCloud) will test the getInputCloud() and setInputCloud() method.
+ *  TEST(pclMlsSmoothingTest, MlsFiltering) will test the mlsProcess().
  *
- *  Created on: Oct 15, 2017
- *      Author: viki
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
+ *  @copyright GNU Public License.
  */
 #include <gtest/gtest.h>
 #include <pclMlsSmoothing.h>
 using std::cout;
 using std::endl;
-TEST(pclMlsSmoothing, setRadius) {
+/** @brief TEST(pclMlsSmoothingTest, setRadius) will
+ * test the setSearchRadius() and getSearchRadius() method */
+TEST(pclMlsSmoothingTest, setRadius) {
   pclMlsSmoothing mlsing;
   double radiusOut;
   mlsing.setSearchRadius(20.32);
   radiusOut = mlsing.getSearchRadius();
   EXPECT_NEAR(20.32, radiusOut, 0.1);
 }
-
-TEST(pclMlsSmoothing, setpclCloud) {
+/** @brief TEST(pclMlsSmoothingTest, setpclCloud) will
+ * test the getInputCloud() and setInputCloud() method */
+TEST(pclMlsSmoothingTest, setpclCloud) {
   pclMlsSmoothing mlsing;
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloudFiltered(
@@ -24,7 +34,7 @@ TEST(pclMlsSmoothing, setpclCloud) {
   cloud->width = 2;
   cloud->height = 1;
   cloud->points.resize(cloud->width * cloud->height);
-  //define point cloud
+  // define point cloud
   cloud->points[0].x = 3;
   cloud->points[0].y = 0.2;
   cloud->points[0].z = -1.2;
@@ -37,10 +47,10 @@ TEST(pclMlsSmoothing, setpclCloud) {
   int getInputSize = cloudFiltered->width * cloudFiltered->height;
   EXPECT_EQ(originSize, getInputSize);
   EXPECT_NEAR(-1.2, cloudFiltered->points[0].z, 0.1);
-
 }
-
-TEST(pclMlsSmoothing, MlsFiltering) {
+/** @brief TEST(pclMlsSmoothingTest, MlsFiltering) will
+ * test the mlsProcess() */
+TEST(pclMlsSmoothingTest, MlsFiltering) {
   pclMlsSmoothing mlsing;
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
   pcl::PointCloud<pcl::PointNormal>::Ptr cloudFiltered(
@@ -48,7 +58,7 @@ TEST(pclMlsSmoothing, MlsFiltering) {
   cloud->width = 9;
   cloud->height = 1;
   cloud->points.resize(cloud->width * cloud->height);
-  //define point cloud
+  // define point cloud
   cloud->points[0].x = 0;
   cloud->points[0].y = 0;
   cloud->points[0].z = 0;
@@ -80,10 +90,9 @@ TEST(pclMlsSmoothing, MlsFiltering) {
   mlsing.setSearchRadius(8.0);
   mlsing.mlsProcess(*cloudFiltered);
   double testZ = cloudFiltered->points[4].z;
-  //cloudFiltered->points[4].normal;
-  //cout << testZ << endl;
+  // cloudFiltered->points[4].normal;
+  // cout << testZ << endl;
   EXPECT_GT(1.4, testZ);
-
 }
 
 

@@ -1,16 +1,19 @@
-/*
- * pclMlsSmoothing.cpp
+// "Copyright [2017] <Michael Kam>"
+/** @file pclMlsSmoothing.cpp
+ *  @brief This is the implementation of the pclMlsSmoothing class. This class consists of 5 methods.
+ *  Please refer the pclMlsSmoothing.h for more detail.
  *
- *  Created on: Oct 15, 2017
- *      Author: viki
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
  */
-#include <iostream>
+
 #include <pcl/io/io.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
-#include <ios>
 #include <pclMlsSmoothing.h>
-using namespace pcl;
+#include <ios>
+#include <iostream>
+// using namespace pcl;
 
 pclMlsSmoothing::pclMlsSmoothing() {
   searchRadius = 0;
@@ -18,24 +21,21 @@ pclMlsSmoothing::pclMlsSmoothing() {
 
 void pclMlsSmoothing::setSearchRadius(double radius) {
   searchRadius = radius;
-
 }
 double pclMlsSmoothing::getSearchRadius() {
   return searchRadius;
 }
-void pclMlsSmoothing::setInputCloud(PointCloud<PointXYZ>& cloudIn) {
+void pclMlsSmoothing::setInputCloud(
+    const pcl::PointCloud<pcl::PointXYZ>& cloudIn) {
   cloud = cloudIn;
 }
-void pclMlsSmoothing::getInputCloud(PointCloud<PointXYZ>& cloudOut)
-{
+void pclMlsSmoothing::getInputCloud(pcl::PointCloud<pcl::PointXYZ>& cloudOut) {
   cloudOut = cloud;
 }
-void pclMlsSmoothing::mlsProcess(PointCloud<PointNormal>& mls_points)
-{
+void pclMlsSmoothing::mlsProcess(
+    pcl::PointCloud<pcl::PointNormal>& mls_points) {
   pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(
       new pcl::search::KdTree<pcl::PointXYZ>);
-  //pcl::PointCloud<pcl::PointNormal> mls_points;
-
   pcl::MovingLeastSquares<pcl::PointXYZ, pcl::PointNormal> mls;
   mls.setComputeNormals(true);
   cloudPtr = cloud.makeShared();
@@ -44,8 +44,6 @@ void pclMlsSmoothing::mlsProcess(PointCloud<PointNormal>& mls_points)
   mls.setPolynomialFit(true);
   mls.setSearchMethod(tree);
   mls.setSearchRadius(searchRadius);
-
   // Reconstruct
   mls.process(mls_points);
-
 }

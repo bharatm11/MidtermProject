@@ -1,31 +1,32 @@
-/*
- * pclVoxel.cpp
+// "Copyright [2017] <Michael Kam>"
+/** @file pclVoxel.cpp
+ *  @brief This is the implementation of the pclVoxel class. This class
+ *  consists of 5 methods. Please refer the pclVoxel.h for more detail.
  *
- *  Created on: Oct 10, 2017
- *      Author: viki
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
  */
-#include <iostream>
+
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
 #include <pcl/filters/voxel_grid.h>
+#include "pclVoxel.h"
+#include <iostream>
 #include <vector>
 #include <ios>
-#include "pclVoxel.h"
 using std::vector;
-using namespace pcl;
+// using namespace pcl;
 
 
-void pclVoxel::filterProcess(PointCloud<PointXYZ>& cloudOut) {
-
+void pclVoxel::filterProcess(pcl::PointCloud<pcl::PointXYZ>& cloudOut) {
   pcl::VoxelGrid<pcl::PointXYZ> sor;
   cloudPtr = cloud.makeShared();  //!!!!! Nice work!!!
   sor.setInputCloud(cloudPtr);
   sor.setLeafSize(lx, ly, lz);
   sor.filter(cloudOut);
-
 }
 
-void pclVoxel::getInputCloud(PointCloud<PointXYZ>& cloudOut) {
+void pclVoxel::getInputCloud(pcl::PointCloud<pcl::PointXYZ>& cloudOut) {
   cloudOut = cloud;
 }
 
@@ -43,7 +44,7 @@ pclVoxel::pclVoxel() {
   lz = 0;
 }
 
-void pclVoxel::setInputCloud(PointCloud<PointXYZ>& cloudIn) {
+void pclVoxel::setInputCloud(pcl::PointCloud<pcl::PointXYZ>& cloudIn) {
   cloud = cloudIn;
 }
 

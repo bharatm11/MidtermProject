@@ -1,30 +1,40 @@
-/*
- * pclCloudViewer.h
+// "Copyright [2017] <Michael Kam>"
+/** @file pclCloudViewer.h
+ *  @brief header file of an pclCloudViewer class.
  *
- *  Created on: Oct 6, 2017
- *      Author: Michael
+ *  This class utilize pcl visualization to display point cloud.
+ *
+ *  @author Michael Kam (michael081906)
+ *  @bug No1 can't not be compile successfully in the test case.
+ *  @copyright GNU Public License.
  */
 
 #ifndef INCLUDE_PCLCLOUDVIEWER_H_
 #define INCLUDE_PCLCLOUDVIEWER_H_
 
 #include <pcl/visualization/cloud_viewer.h>
-#include <iostream>
 #include <pcl/io/io.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
+#include <iostream>
 
-
+/** @brief pclCloudViewer is an implementation by using pcl visualization to display the point cloud
+ * *
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
+ */
 class pclCloudViewer {
- public:
-  pclCloudViewer();
-
-  void dispaly(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr &cloud);
-
  private:
+  /** @brief accumulate counter during display  */
   int user_data;
+
+ public:
+  /**@brief constructor */
+  pclCloudViewer();
+  /**@brief display point cloud
+   * @param[in] cloud reference of a point cloud
+   * @return none */
+  void dispaly(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr &cloud);
 };
 
-
-
-#endif /* INCLUDE_PCLCLOUDVIEWER_H_ */
+#endif  // INCLUDE_PCLCLOUDVIEWER_H_

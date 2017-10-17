@@ -1,23 +1,31 @@
-/*
- * pclIoTest.cpp
+// "Copyright [2017] <Michael Kam>"
+/** @file pclIoTest.cpp
+ *  @brief pclIoTest.cpp consists of 2 unit test cases that test the
+ *  pclIo class.
+ **
+ *  TEST(pclIoTest, loadPCDfileMustFail) will test the readPCDfile() method.
+ *  TEST(pclIoTest, loadPCDfileShowResult) will test the getPointCloud() method.
  *
- *  Created on: Oct 6, 2017
- *      Author: Michael
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
+ *  @copyright GNU Public License.
  */
 
-#include <iostream>
 #include "pclIo.h"
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
 #include <gtest/gtest.h>
+#include <iostream>
 
-
+/** @brief TEST(pclIoTest, loadPCDfileMustFail) will
+ * test the readPCDfile() method*/
 TEST(pclIoTest, loadPCDfileMustFail) {
   pclIo pclLoad;
   int load = pclLoad.readPCDfile("no_such_file.pcd");
   EXPECT_NEAR(-1, load, 0.5);
 }
-
+/** @brief TEST(pclIoTest, loadPCDfileShowResult) will
+ * test the getPointCloud() method*/
 TEST(pclIoTest, loadPCDfileShowResult) {
   pclIo pclLoad;
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);

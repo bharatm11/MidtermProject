@@ -1,18 +1,21 @@
-/*
- * pclPassThrough.cpp
+// "Copyright [2017] <Michael Kam>"
+/** @file pclPassThrough.cpp
+ *  @brief This is the implementation of the pclPassThrough class. This class consists of 7 methods.
+ *  Please refer the pclPassThrough.h for more detail.
  *
- *  Created on: Oct 11, 2017
- *      Author: viki
+ *  @author Michael Kam (michael081906)
+ *  @bug No known bugs.
  */
 
-#include <iostream>
 #include <pcl/io/io.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
 #include <pcl/filters/passthrough.h>
-#include <vector>
 #include "pclPassThrough.h"
-using namespace pcl;
+#include <vector>
+#include <iostream>
+
+// using namespace pcl;
 using std::vector;
 
 pclPassThrough::pclPassThrough() {
@@ -22,50 +25,39 @@ pclPassThrough::pclPassThrough() {
   yMax = 0;
   xMin = 0;
   xMax = 0;
-
 }
-void pclPassThrough::setInputCloud(PointCloud<PointXYZ>& cloudIn) {
+void pclPassThrough::setInputCloud(pcl::PointCloud<pcl::PointXYZ>& cloudIn) {
   cloud = cloudIn;
 }
-void pclPassThrough::getInputCloud(PointCloud<PointXYZ>& cloudOut)
-{
+void pclPassThrough::getInputCloud(pcl::PointCloud<pcl::PointXYZ>& cloudOut) {
   cloudOut = cloud;
 }
 
-
 void pclPassThrough::setFilterXlimit(const float& setXMin,
-                                     const float& setXMax)
-{
+                                     const float& setXMax) {
   xMax = setXMax;
   xMin = setXMin;
   pass.setFilterFieldName("x");
   pass.setFilterLimits(xMin, xMax);
-
 }
 void pclPassThrough::setFilterYlimit(const float& setYMin,
-                                     const float& setYMax)
-{
+                                     const float& setYMax) {
   yMax = setYMax;
   yMin = setYMin;
   pass.setFilterFieldName("y");
   pass.setFilterLimits(yMin, yMax);
-
 }
 void pclPassThrough::setFilterZlimit(const float& setZMin,
-                                     const float& setZMax)
-{
+                                     const float& setZMax) {
   zMax = setZMax;
   zMin = setZMin;
   pass.setFilterFieldName("z");
   pass.setFilterLimits(zMin, zMax);
-
 }
-void pclPassThrough::filterProcess(PointCloud<PointXYZ>& cloudOut)
-{
+void pclPassThrough::filterProcess(pcl::PointCloud<pcl::PointXYZ>& cloudOut) {
   cloudPtr = cloud.makeShared();
   pass.setInputCloud(cloudPtr);
   pass.filter(cloudOut);
-
 }
 
 vector<float> pclPassThrough::getFilterLimit() {
