@@ -3,7 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/michael081906/MidtermProject/badge.svg?branch=master)](https://coveralls.io/github/michael081906/MidtermProject?branch=master)
 ---
 
-## Overview
+## Overview and purpose of the project (what does it do? Main Features? This should be a write-up of several paragraphs like a short report). Include results/performance examples.
 
 This project goal is to develop a module that utilizes PCL library and other algorithms to detect an obstacle in front of a robot.
 
@@ -15,6 +15,88 @@ This is a C++ project with:
 ## SIP process link:
 
 https://docs.google.com/spreadsheets/d/1hbsekl-bL_gAPJG16gUsE_9I0f2z8C1L1cXL2aqPpPI/edit#gid=919119936
+
+## License 
+
+
+
+## Dependencies (and how to install if not included in repository)
+## Build
+
+git clone --recursive https://github.com/michael081906/MidtermProject.git
+cd <path to repository>
+mkdir build
+cd build
+cmake ..
+make
+
+## Run demo
+After the Build step, type:
+```
+Run program: ./app/shell-app
+```
+## Run tests
+After the Build step, type:
+```
+Run tests: ./test/cpp-test
+```
+## doxygen documentation
+```
+sudo apt install doxygen
+cd <path to repository>
+mkdir docs
+cd docs
+doxygen -g Midterm
+```
+open the Midterm file(which is a configuration file of doxygen), and modify input tag into
+
+INPUT                  = ../include ../src ../test
+
+and then save the file. Back to the terminal and type:
+```
+doxygen Midterm
+```
+find a index.html under the ./html, which can be viewed on the web pages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Standard install via command-line
