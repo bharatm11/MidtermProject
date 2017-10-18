@@ -50,13 +50,13 @@ make
 
 After the Build step, type:
 ```
-Run program: ./app/shell-app
+./app/shell-app
 ```
 ## Run tests
 
 After the Build step, type:
 ```
-Run tests: ./test/cpp-test
+./test/cpp-test
 ```
 ## doxygen documentation
 ```
