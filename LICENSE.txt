@@ -5,6 +5,13 @@ Copyright (c) 2009-2012, Willow Garage, Inc.
 Copyright (c) 2012-, Open Perception, Inc.
 Copyright (c) XXX, respective authors.
 
+Doxygen license
+Copyright © 1997-2016 by Dimitri van Heesch.
+
+Googletest license
+Copyright 2008, Google Inc.
+
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
