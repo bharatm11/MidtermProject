@@ -1,0 +1,178 @@
+\hypertarget{classobstacleIdentify}{}\section{obstacle\+Identify Class Reference}
+\label{classobstacleIdentify}\index{obstacle\+Identify@{obstacle\+Identify}}
+
+
+\hyperlink{classobstacleIdentify}{obstacle\+Identify} is an implementation by using point cloud normal to identify an obstacle.
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize} 
+
+
+
+
+{\ttfamily \#include $<$obstacle\+Identify.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classobstacleIdentify_ae68b52fce2c7c4a1e4e89bc1729d18e1}{obstacle\+Identify} ()\hypertarget{classobstacleIdentify_ae68b52fce2c7c4a1e4e89bc1729d18e1}{}\label{classobstacleIdentify_ae68b52fce2c7c4a1e4e89bc1729d18e1}
+
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+void \hyperlink{classobstacleIdentify_a37f502bcc8896e1e072ac3aef054f4fb}{set\+NormalZ} (double z\+Normal)
+\begin{DoxyCompactList}\small\item\em set threshold of normal vector z \end{DoxyCompactList}\item 
+double \hyperlink{classobstacleIdentify_a5011070a62ae25634d900f6d590e64b8}{get\+NormalZ} ()
+\begin{DoxyCompactList}\small\item\em get threshold of normal vector z \end{DoxyCompactList}\item 
+void \hyperlink{classobstacleIdentify_ac5c0440ff601e6d82d09501a21da5fbc}{set\+Z\+Height} (double height)
+\begin{DoxyCompactList}\small\item\em set threshold height of z \end{DoxyCompactList}\item 
+double \hyperlink{classobstacleIdentify_a1f33906be0e8353b9e3855757a89563b}{get\+Z\+Height} ()
+\begin{DoxyCompactList}\small\item\em get threshold of height of z \end{DoxyCompactList}\item 
+void \hyperlink{classobstacleIdentify_acfecaf02b946209c1c60a0c45897a265}{set\+Input\+Cloud} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$ \&cloud\+In)
+\begin{DoxyCompactList}\small\item\em input a point cloud data and set it to the private cloud \end{DoxyCompactList}\item 
+void \hyperlink{classobstacleIdentify_a4f8e99317f8791370f63619f711511bf}{get\+Input\+Cloud} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$ \&cloud\+Out)
+\begin{DoxyCompactList}\small\item\em get a point cloud data from private cloud \end{DoxyCompactList}\item 
+void \hyperlink{classobstacleIdentify_a005c806b919c51794c7dd0ad5f9813be}{process} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$ \&cloud\+Out)
+\begin{DoxyCompactList}\small\item\em identify the obstacle by checking z normal vector of every point and return obstacle point cloud \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classobstacleIdentify}{obstacle\+Identify} is an implementation by using point cloud normal to identify an obstacle.
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Michael Kam (michael081906) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000002}{Bug}]No known bugs. \end{DoxyRefDesc}
+
+
+\subsection{Member Function Documentation}
+\index{obstacle\+Identify@{obstacle\+Identify}!get\+Input\+Cloud@{get\+Input\+Cloud}}
+\index{get\+Input\+Cloud@{get\+Input\+Cloud}!obstacle\+Identify@{obstacle\+Identify}}
+\subsubsection[{\texorpdfstring{get\+Input\+Cloud(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$ \&cloud\+Out)}{getInputCloud(pcl::PointCloud< pcl::PointNormal > &cloudOut)}}]{\setlength{\rightskip}{0pt plus 5cm}void obstacle\+Identify\+::get\+Input\+Cloud (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$ \&}]{cloud\+Out}
+\end{DoxyParamCaption}
+)}\hypertarget{classobstacleIdentify_a4f8e99317f8791370f63619f711511bf}{}\label{classobstacleIdentify_a4f8e99317f8791370f63619f711511bf}
+
+
+get a point cloud data from private cloud 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud\+Out} & reference of a point cloud \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{obstacle\+Identify@{obstacle\+Identify}!get\+NormalZ@{get\+NormalZ}}
+\index{get\+NormalZ@{get\+NormalZ}!obstacle\+Identify@{obstacle\+Identify}}
+\subsubsection[{\texorpdfstring{get\+Normal\+Z()}{getNormalZ()}}]{\setlength{\rightskip}{0pt plus 5cm}double obstacle\+Identify\+::get\+NormalZ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classobstacleIdentify_a5011070a62ae25634d900f6d590e64b8}{}\label{classobstacleIdentify_a5011070a62ae25634d900f6d590e64b8}
+
+
+get threshold of normal vector z 
+
+\begin{DoxyReturn}{Returns}
+threshold of normal vector z 
+\end{DoxyReturn}
+\index{obstacle\+Identify@{obstacle\+Identify}!get\+Z\+Height@{get\+Z\+Height}}
+\index{get\+Z\+Height@{get\+Z\+Height}!obstacle\+Identify@{obstacle\+Identify}}
+\subsubsection[{\texorpdfstring{get\+Z\+Height()}{getZHeight()}}]{\setlength{\rightskip}{0pt plus 5cm}double obstacle\+Identify\+::get\+Z\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classobstacleIdentify_a1f33906be0e8353b9e3855757a89563b}{}\label{classobstacleIdentify_a1f33906be0e8353b9e3855757a89563b}
+
+
+get threshold of height of z 
+
+\begin{DoxyReturn}{Returns}
+threshold of height of z 
+\end{DoxyReturn}
+\index{obstacle\+Identify@{obstacle\+Identify}!process@{process}}
+\index{process@{process}!obstacle\+Identify@{obstacle\+Identify}}
+\subsubsection[{\texorpdfstring{process(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$ \&cloud\+Out)}{process(pcl::PointCloud< pcl::PointNormal > &cloudOut)}}]{\setlength{\rightskip}{0pt plus 5cm}void obstacle\+Identify\+::process (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$ \&}]{cloud\+Out}
+\end{DoxyParamCaption}
+)}\hypertarget{classobstacleIdentify_a005c806b919c51794c7dd0ad5f9813be}{}\label{classobstacleIdentify_a005c806b919c51794c7dd0ad5f9813be}
+
+
+identify the obstacle by checking z normal vector of every point and return obstacle point cloud 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud\+Out} & reference of a point cloud \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{obstacle\+Identify@{obstacle\+Identify}!set\+Input\+Cloud@{set\+Input\+Cloud}}
+\index{set\+Input\+Cloud@{set\+Input\+Cloud}!obstacle\+Identify@{obstacle\+Identify}}
+\subsubsection[{\texorpdfstring{set\+Input\+Cloud(pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$ \&cloud\+In)}{setInputCloud(pcl::PointCloud< pcl::PointNormal > &cloudIn)}}]{\setlength{\rightskip}{0pt plus 5cm}void obstacle\+Identify\+::set\+Input\+Cloud (
+\begin{DoxyParamCaption}
+\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$ \&}]{cloud\+In}
+\end{DoxyParamCaption}
+)}\hypertarget{classobstacleIdentify_acfecaf02b946209c1c60a0c45897a265}{}\label{classobstacleIdentify_acfecaf02b946209c1c60a0c45897a265}
+
+
+input a point cloud data and set it to the private cloud 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud\+In} & reference of a point cloud \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{obstacle\+Identify@{obstacle\+Identify}!set\+NormalZ@{set\+NormalZ}}
+\index{set\+NormalZ@{set\+NormalZ}!obstacle\+Identify@{obstacle\+Identify}}
+\subsubsection[{\texorpdfstring{set\+Normal\+Z(double z\+Normal)}{setNormalZ(double zNormal)}}]{\setlength{\rightskip}{0pt plus 5cm}void obstacle\+Identify\+::set\+NormalZ (
+\begin{DoxyParamCaption}
+\item[{double}]{z\+Normal}
+\end{DoxyParamCaption}
+)}\hypertarget{classobstacleIdentify_a37f502bcc8896e1e072ac3aef054f4fb}{}\label{classobstacleIdentify_a37f502bcc8896e1e072ac3aef054f4fb}
+
+
+set threshold of normal vector z 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em z\+Normal} & threshold of normal vector of z \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{obstacle\+Identify@{obstacle\+Identify}!set\+Z\+Height@{set\+Z\+Height}}
+\index{set\+Z\+Height@{set\+Z\+Height}!obstacle\+Identify@{obstacle\+Identify}}
+\subsubsection[{\texorpdfstring{set\+Z\+Height(double height)}{setZHeight(double height)}}]{\setlength{\rightskip}{0pt plus 5cm}void obstacle\+Identify\+::set\+Z\+Height (
+\begin{DoxyParamCaption}
+\item[{double}]{height}
+\end{DoxyParamCaption}
+)}\hypertarget{classobstacleIdentify_ac5c0440ff601e6d82d09501a21da5fbc}{}\label{classobstacleIdentify_ac5c0440ff601e6d82d09501a21da5fbc}
+
+
+set threshold height of z 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em height} & threshold height of z \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/viki/\+Midterm/include/\hyperlink{obstacleIdentify_8h}{obstacle\+Identify.\+h}\end{DoxyCompactItemize}

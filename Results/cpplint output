@@ -1,0 +1,49 @@
+viki@ubuntu:~/Midterm$ ../cpplint.py --extensions=h,hpp,cpp $( find . -name *.h -or -name *.hpp -or -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/" )
+./include/pclMlsSmoothing.h:56:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudOut  [runtime/references] [2]
+./include/pclMlsSmoothing.h:60:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointNormal>& cloudOut  [runtime/references] [2]
+Done processing ./include/pclMlsSmoothing.h
+./include/pclPassThrough.h:55:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudIn  [runtime/references] [2]
+./include/pclPassThrough.h:59:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudOut  [runtime/references] [2]
+./include/pclPassThrough.h:63:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudOut  [runtime/references] [2]
+Done processing ./include/pclPassThrough.h
+./include/pclIo.h:40:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudOut  [runtime/references] [2]
+Done processing ./include/pclIo.h
+Done processing ./include/pclCloudViewer.h
+./include/pclFastTriangular.h:53:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointNormal>& cloudIn  [runtime/references] [2]
+./include/pclFastTriangular.h:57:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointNormal>& cloudOut  [runtime/references] [2]
+./include/pclFastTriangular.h:61:  Is this a non-const reference? If so, make const or use a pointer: pcl::PolygonMesh& triangles  [runtime/references] [2]
+Done processing ./include/pclFastTriangular.h
+./include/obstacleIdentify.h:56:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointNormal>& cloudIn  [runtime/references] [2]
+./include/obstacleIdentify.h:60:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointNormal>& cloudOut  [runtime/references] [2]
+./include/obstacleIdentify.h:64:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointNormal>& cloudOut  [runtime/references] [2]
+Done processing ./include/obstacleIdentify.h
+./include/pclVoxel.h:57:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudIn  [runtime/references] [2]
+./include/pclVoxel.h:61:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudOut  [runtime/references] [2]
+./include/pclVoxel.h:65:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudOut  [runtime/references] [2]
+Done processing ./include/pclVoxel.h
+./include/pclStatisticalOutlierRemoval.h:48:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudIn  [runtime/references] [2]
+./include/pclStatisticalOutlierRemoval.h:52:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudOut  [runtime/references] [2]
+./include/pclStatisticalOutlierRemoval.h:56:  Is this a non-const reference? If so, make const or use a pointer: pcl::PointCloud<pcl::PointXYZ>& cloudOut  [runtime/references] [2]
+Done processing ./include/pclStatisticalOutlierRemoval.h
+Done processing ./test/main.cpp
+Done processing ./test/pclPassThroughTest.cpp
+Done processing ./test/pclVoxelTest.cpp
+Done processing ./test/obstacleIdentifyTest.cpp
+Done processing ./test/pclIoTest.cpp
+Done processing ./test/pclMlsSmoothingTest.cpp
+Done processing ./test/pclFastTriangularTest.cpp
+./test/pclStatisticalOutlierRemovalTest.cpp:72:  Consider using rand_r(...) instead of rand(...) for improved thread safety.  [runtime/threadsafe_fn] [2]
+./test/pclStatisticalOutlierRemovalTest.cpp:73:  Consider using rand_r(...) instead of rand(...) for improved thread safety.  [runtime/threadsafe_fn] [2]
+./test/pclStatisticalOutlierRemovalTest.cpp:74:  Consider using rand_r(...) instead of rand(...) for improved thread safety.  [runtime/threadsafe_fn] [2]
+Done processing ./test/pclStatisticalOutlierRemovalTest.cpp
+Done processing ./app/pclFastTriangular.cpp
+Done processing ./app/main.cpp
+Done processing ./app/pclCloudViewer.cpp
+Done processing ./app/pclVoxel.cpp
+Done processing ./app/obstacleIdentify.cpp
+Done processing ./app/pclStatisticalOutlierRemoval.cpp
+Done processing ./app/pclMlsSmoothing.cpp
+Done processing ./app/pclIo.cpp
+Done processing ./app/pclPassThrough.cpp
+Total errors found: 21
+
