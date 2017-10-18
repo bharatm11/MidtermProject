@@ -5,6 +5,7 @@
  *
  *  @author Michael Kam (michael081906)
  *  @bug No known bugs.
+ *  @copyright GNU Public License.
  */
 #include <pcl/visualization/cloud_viewer.h>
 #include <pcl/io/io.h>

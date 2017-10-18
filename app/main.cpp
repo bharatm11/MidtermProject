@@ -7,6 +7,7 @@
  *
  *  @author Michael Kam (michael081906)
  *  @bug No known bugs.
+ *  @copyright GNU Public License.
  */
 #include "pclIo.h"
 #include "pclVoxel.h"
@@ -40,47 +41,50 @@ int main() {
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_out(
       new pcl::PointCloud<pcl::PointXYZ>);
   //  1. Load pcd file
+  std::cout << " 1. Loading pcd file, please wait..." << std::endl;
   pclLoad.readPCDfile("../PCL_Test_Mat.pcd");
   pclLoad.getPointCloud(*cloud_out);
+  std::cout << " Loading completed" << std::endl;
   //  2. Remove the noise of point cloud
+  std::cout << " 2. Removing the noise of point cloud, please wait..."
+            << std::endl;
   sor.setInputCloud(*cloud_out);
   sor.setMeanK(30);
   sor.setStddevMulThresh(1);
   sor.filterProcess(*cloud_out);
+  std::cout << " Removing completed" << std::endl;
   //  3. Extract certain region of point cloud
+  std::cout << " 3. Extracting certain region of point cloud, please wait..."
+            << std::endl;
   pt.setFilterZlimit(0.0, 8.0);
   pt.setInputCloud(*cloud_out);
   pt.filterProcess(*cloud_out);
+  std::cout << " Extracting completed" << std::endl;
   //  4. Down sample the point cloud
+  std::cout << " 4. Down sampling the point cloud, please wait..." << std::endl;
   vx.setInputCloud(*cloud_out);
   vx.setLeafSize(0.001, 0.001, 0.001);
   vx.filterProcess(*cloud_out);
-  std::cout << " Smoothing a point cloud, please wait..." << std::endl;
+  std::cout << " Down sampling completed" << std::endl;
   //  5. Smooth the point cloud
+  std::cout << " 5. Smoothing the point cloud, please wait..." << std::endl;
   mls.setInputCloud(*cloud_out);
   mls.setSearchRadius(0.05);
   mls.mlsProcess(*cloud_with_normal);
   std::cout << " Smoothing completed" << std::endl;
   //  6. Identify obstacle
+  std::cout << " 6. Identifying obstacle, please wait..." << std::endl;
   oi.setInputCloud(*cloud_with_normal);
   oi.setNormalZ(0.8);
   oi.process(*cloud_with_normal);
+  std::cout << " Identifying completed, please wait..." << std::endl;
   //  7. Mesh the obstacle
-  std::cout << " Reconstructing a surface, please wait..." << std::endl;
+  std::cout << " 7. Meshing the obstacle, please wait..." << std::endl;
   ft.setInputCloud(*cloud_with_normal);
   ft.setSearchRadius(0.05);
   ft.reconctruct(triangles);
-  std::cout << " Surface reconstruction completed..." << std::endl;
+  std::cout << " Meshing completed..." << std::endl;
   //  8. Show the result
   pclView.display(triangles);
-  /*
-   pcl::visualization::CloudViewer viewer("Cloud Viewer");
-   viewer.showCloud(cloud_out);
-   int user_data=0;
-   do {
-   user_data++;
-   } while (!viewer.wasStopped());
-   */
-
   return 0;
 }

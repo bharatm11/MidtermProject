@@ -7,6 +7,7 @@
  *
  *  @author Michael Kam (michael081906)
  *  @bug No known bugs.
+ *  @copyright GNU Public License.
  */
 
 #ifndef INCLUDE_PCLMLSSMOOTHING_H_
