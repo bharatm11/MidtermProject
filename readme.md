@@ -3,8 +3,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/michael081906/MidtermProject/badge.svg?branch=master)](https://coveralls.io/github/michael081906/MidtermProject?branch=master)
 ---
 
-## Overview and purpose of the project (what does it do? Main Features? This should be a write-up of several paragraphs like a short report). Include results/performance examples.
-
 ## Overview and purpose of the project 
 
 This project goal is to develop a module that utilizes PCL library to detect an obstacle in front of a robot. This project created eight classes and utilizes them to complete the task. First, a class, pclIo, loads point cloud data from file. Second, a class, pclStatisticalOutlierRemoval, removes noise in point cloud. Third, a class, pclPassThrough, extracts certain range of point cloud data based on setting coordinate threshold. Fourth, a class, pclVoxel, down samples point cloud data, making less data to compute. Fifth, a class, pclMlsSmoothing, smooths point cloud so that a class such as obstacleIdentify can identify an obstacle more correctly. Sixth, a class, obstacleIdentify, extracts a normal vector from a point cloud and identifies whether it is an obstacle. Seventh, a class, pclFastTriangular, reconstructs the obstacle’s surface. Lastly, a class, pclCloudViewer, displays the results.
@@ -40,14 +38,14 @@ sudo apt-get install libpcl-all
 Reference: http://pointclouds.org/downloads/linux.html
 
 ## Build
-
+```
 git clone --recursive https://github.com/michael081906/MidtermProject.git
 cd <path to repository>
 mkdir build
 cd build
 cmake ..
 make
-
+```
 ## Run demo
 
 After the Build step, type:
