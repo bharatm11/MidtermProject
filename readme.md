@@ -52,6 +52,8 @@ After the Build step, type:
 ```
 ./app/shell-app
 ```
+First cloud viewer window shows the original point cloud loaded from .pcd file. After closing the window (make sure click only ONE time on X button), the program will continue rest of the algorithm to identify obstacles. The results will later be showed on the second pop-up cloud viewer window. 
+
 ## Run tests
 
 After the Build step, type:

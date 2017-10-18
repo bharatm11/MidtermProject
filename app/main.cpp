@@ -44,6 +44,12 @@ int main() {
   std::cout << " 1. Loading pcd file, please wait..." << std::endl;
   pclLoad.readPCDfile("../PCL_Test_Mat.pcd");
   pclLoad.getPointCloud(*cloud_out);
+  pcl::visualization::CloudViewer viewer("Cloud of Raw data");
+  viewer.showCloud(cloud_out);
+  int user_data = 0;
+  do {
+    user_data++;
+  } while (!viewer.wasStopped());
   std::cout << " Loading completed" << std::endl;
   //  2. Remove the noise of point cloud
   std::cout << " 2. Removing the noise of point cloud, please wait..."
