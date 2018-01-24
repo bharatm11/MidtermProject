@@ -175,10 +175,11 @@ if(    fname.compare (fname.size () - extension.size (), extension.size (), exte
       sor.setStddevMulThresh(1);
       sor.filterProcess(*m.cloud);
       mls.setInputCloud(*m.cloud);
-      mls.setSearchRadius(0.03);
+      mls.setSearchRadius(0.05);
       mls.mlsProcess(*cloud_with_normal);
       //pcl::copyPoint(*cloud_with_normal,*m.cloud);
       pcl::copyPointCloud(*cloud_with_normal, *m.cloud);
+      std::cout << "one!!" <<std::endl;
 
       models.push_back (m);
     }

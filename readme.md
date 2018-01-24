@@ -1,3 +1,22 @@
+
+```
+git clone --recursive https://github.com/michael081906/MidtermProject.git
+cd <path to repository>
+mkdir build
+cd build
+cmake ..
+make
+./app/shell-app pointCloudFile_[1-9].pcd
+```
+The default directory of the .pcd would be at /build/app
+
+```
+rosrun image_view image_saver image:=/camera/rgb/image_color _save_all_image:=false
+rosservice call /image_saver_1516811891704557929/save 
+```
+
+
+
 # C++ Boilerplate
 [![Build Status](https://travis-ci.org/michael081906/MidtermProject.svg?branch=master)](https://travis-ci.org/michael081906/MidtermProject)
 [![Coverage Status](https://coveralls.io/repos/github/michael081906/MidtermProject/badge.svg?branch=master)](https://coveralls.io/github/michael081906/MidtermProject?branch=master)
