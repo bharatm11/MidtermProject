@@ -64,7 +64,14 @@ mkdir build
 cd build
 cmake ..
 make
+
 ```
+
+ mkdir /home/eric/certi_build 
+ cd /home/eric/certi_build
+ cmake -G"Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug ../certi_src 
+
+
 ## Run demo
 
 After the Build step, type:
