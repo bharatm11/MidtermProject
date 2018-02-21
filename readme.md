@@ -6,7 +6,8 @@ mkdir build
 cd build
 cmake ..
 make
-./app/shell-app pointCloudFile_[1-9].pcd
+cd app/
+shell-app pointCloudFile_[1-9].pcd
 ```
 The default directory of the .pcd would be at /build/app
 
